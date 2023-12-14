@@ -21,7 +21,7 @@ module.exports = {
     },
     password: {
       allowNull: false,
-      type: Sequelize.STRING(255),
+      type: Sequelize.TEXT,
     },
     image: {
       allowNull: true,

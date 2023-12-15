@@ -8,5 +8,6 @@ userRoutes.post('/', userController.createUser);
 
 userRoutes.use(authMiddleware);
 userRoutes.get('/', userController.getAllUsers);
+userRoutes.get('/:id', userController.getUserById);
 
 module.exports = userRoutes;

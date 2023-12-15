@@ -4,6 +4,7 @@ const categoriesController = require('../controllers/categories');
 
 const categoriesRoutes = Router();
 
+categoriesRoutes.get('/', authMiddleware, categoriesController.getAllCategories);
 categoriesRoutes.post('/', authMiddleware, categoriesController.createCategory);
 
 module.exports = categoriesRoutes;

@@ -12,6 +12,7 @@ app.get('/', (_request, response) => {
 });
 
 app.use(express.json());
+app.use('/user', userRoutes);
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -33,10 +34,11 @@ app.post('/login', async (req, res) => {
   };
 
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
-    expiresIn: '1h',
+    expiresIn: '24h',
   });
 
   res.status(200).json({ token });
 });
 app.post('/user', userRoutes);
+
 module.exports = app;

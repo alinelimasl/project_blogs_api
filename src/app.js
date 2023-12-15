@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const express = require('express');
 const { User } = require('./models');
 const userRoutes = require('./routes/user.routes');
+const categoriesRoutes = require('./routes/categories.routes');
 // ...
 
 const app = express();
@@ -12,6 +13,8 @@ app.get('/', (_request, response) => {
 });
 
 app.use(express.json());
+
+app.use('/categories', categoriesRoutes);
 app.use('/user', userRoutes);
 
 app.post('/login', async (req, res) => {

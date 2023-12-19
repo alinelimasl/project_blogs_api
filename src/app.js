@@ -3,6 +3,7 @@ const express = require('express');
 const { User } = require('./models');
 const userRoutes = require('./routes/user.routes');
 const categoriesRoutes = require('./routes/categories.routes');
+const postRoutes = require('./routes/post.routes');
 // ...
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use('/categories', categoriesRoutes);
 app.use('/user', userRoutes);
+app.use('/post', postRoutes);
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;

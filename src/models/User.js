@@ -20,8 +20,7 @@ const UserModel = (sequelize, DataTypes) => {
             allowNull: false,
         },
         image: {
-            type: DataTypes.STRING(255),
-            allowNull: true,
+            type: DataTypes.STRING(255),            
         },
     }, {
         tableName: 'users',
